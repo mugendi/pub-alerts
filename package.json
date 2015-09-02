@@ -1,0 +1,32 @@
+{
+  "name": "pub-alerts",
+  "version": "1.0.0",
+  "description": "Publish alerts through redis pubsub, firebase and other 'subscribable' channels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mugendi/pub-alerts.git"
+  },
+  "keywords": [
+    "publish",
+    "alerts",
+    "firebase",
+    "redis",
+    "subscribe"
+  ],
+  "author": "Anthony Mugendi <ngurumugz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mugendi/pub-alerts/issues"
+  },
+  "homepage": "https://github.com/mugendi/pub-alerts",
+  "dependencies": {
+    "firebase": "^2.2.9",
+    "lodash": "^3.10.1",
+    "redis": "^1.0.0",
+    "util": "^0.10.3"
+  }
+}
