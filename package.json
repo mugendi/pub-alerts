@@ -28,5 +28,6 @@
     "lodash": "^3.10.1",
     "redis": "^1.0.0",
     "util": "^0.10.3"
-  }
+  },
+  "devDependencies": {}
 }

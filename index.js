@@ -44,7 +44,7 @@ alerts.prototype.publish = function(channel,msg){
 				this.publishers[i].publish(channel,util.inspect(msg));
 			break;
 			case 'firebase':
-				this.publishers[i].set(util.inspect(msg));
+				this.publishers[i].set(msg);
 			break;
 		}
 	}
