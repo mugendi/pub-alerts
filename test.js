@@ -9,88 +9,26 @@ var options={
 
 var alerts = new Alerts(options);
 
-var documents = 
-{
-	food:[
-		    {
-		        Make: 'Nissan',
-		        Model: 'Murano',
-		        Year: '2013',
-		        Specifications: {
-		            Mileage: '7106',
-		            Trim: 'S AWD',
-		            size:{
-		            	width:3988,
-		            	height:4094
-		            }
-		        }
-		    },
-		    {
-		        Make: 'BMW',
-		        Model: 'X5',
-		        Year: '2014',
-		        Specifications: {
-		            Mileage: '3287',
-		            Trim: 'M',
-		            size:{
-		            	width:6777,
-		            	height:23,
-		            	depth:098
-		            }
-		        }
-		    }
-		],
-	bash:[
-	    {
-	        Make: 'Nissan',
-	        Model: 'Murano',
-	        Year: '2013',
-	        Specifications: {
-	            Mileage: '7106',
-	            Trim: 'S AWD',
-	            size:{
-	            	width:3988,
-	            	height:4094
-	            }
-	        }
-	    },
-	    {
-	        Make: 'BMW',
-	        Model: 'X5',
-	        Year: '2014',
-	        Specifications: {
-	            Mileage: '3287',
-	            Trim: 'M',
-	            size:{
-	            	width:6777,
-	            	height:23,
-	            	depth:098
-	            }
-	        }
-	    }
-	]
-}
-;
+var documents = {job_id:1} ;
 
 
 
 var redis = require("redis"),
     client = redis.createClient();
 
-var channel='this channel';
+var channel='data-tracked';
 
 client.on("message", function (channel, message) {
     console.log("client1 channel " + channel + ": " + message);
 });
 
 
-
-client.on("subscribe", function (channel, count) {
-    
-	alerts.publish(channel, documents)
-
-
-});
-
-
 client.subscribe(channel);
+
+
+
+setInterval(function(){
+	alerts.publish(channel, documents)
+},1000)
+
+

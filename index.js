@@ -41,7 +41,7 @@ alerts.prototype.publish = function(channel,msg){
 		//start systems
 		switch(i.toLowerCase()){
 			case 'redis':
-				this.publishers[i].publish(channel,util.inspect(msg));
+				this.publishers[i].publish(channel,JSON.stringify(msg));
 			break;
 			case 'firebase':
 				this.publishers[i].set(msg);
